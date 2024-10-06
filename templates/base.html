@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="/">Home</a>
+        <a href="/map">Map</a>
+        <a href="/insights">Insights</a>
+        <a href="/crop-suitability">Crop Suitability</a>
+        <a href="/feedback">Feedback</a>
+        <a href="/climate-guide">Climate Guide</a>
+    </nav>
+
+    <!-- Main Content Area -->
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Your Web App</p>
+    </footer>
+
+    <!-- Custom JS files -->
+    <script src="{{ url_for('static', filename='js/3d-globe.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/mapbox.js') }}"></script>
+</body>
+</html>

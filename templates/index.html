@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer Assistant App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/three@0.121.1/build/three.min.js"></script>
+    <script src="{{ url_for('static', filename='js/3d-globe.js') }}"></script>
+</head>
+<body>
+    <h1>Welcome to the Farmer Assistant Application</h1>
+    <div id="globe-container"></div>
+    <a href="/get_user_input">Enter Your Farm Details</a>
+</body>
+</html>

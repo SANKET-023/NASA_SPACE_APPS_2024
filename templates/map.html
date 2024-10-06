@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Map</title>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css" rel="stylesheet" />
+    <style>
+        #map {
+            width: 100%;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Your Farm Location</h2>
+    <form method="POST" action="/get_user_input">
+        <input type="text" name="location" placeholder="Enter location" required>
+        <input type="text" name="farm_size" placeholder="Enter farm size" required>
+        <input type="text" name="crop" placeholder="Current/desired crop" required>
+        <input type="email" name="email" placeholder="Email (optional)">
+        <input type="text" name="mobile" placeholder="Mobile Number (optional)">
+        <button type="submit">Submit</button>
+    </form>
+    <div id="map"></div>
+    <script>
+        mapboxgl.accessToken = 'your_mapbox_access_token';
+        const map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v11',
+            center: [0, 0],  // Set to user location dynamically
+            zoom: 2
+        });
+    </script>
+</body>
+</html>

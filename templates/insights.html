@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Insights</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+</head>
+<body>
+    <h2>Meteorological Insights</h2>
+    <div id="chart"></div>
+    <script>
+        // Fetch and visualize meteorological data
+        fetch('/weather_data?location=your-location')
+            .then(response => response.json())
+            .then(data => {
+                // Use D3.js to create visualizations based on data
+                const chartData = [data.main.temp, data.wind.speed, data.main.humidity]; // Example
+                d3.select('#chart')
+                    .selectAll('div')
+                    .data(chartData)
+                    .enter()
+                    .append('div')
+                    .style('width', d => `${d * 10}px`)
+                    .text(d => d);
+            });
+    </script>
+</body>
+</html>
