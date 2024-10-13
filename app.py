@@ -3,16 +3,16 @@ from pymongo import MongoClient
 import requests
 
 app = Flask(__name__)
-app.secret_key = '8yVUkiHz8AVpaqW8b4gKdGJBrD5tigkkluIM1Won'
+app.secret_key = 'REDACTED'
 # MongoDB setup (replace with your MongoDB URI)
-client = MongoClient('mongodb+srv://sanketmaral1205:yiEneJRFbDG36Lgt@nasa.jp3q1.mongodb.net/?retryWrites=true&w=majority&appName=NASA')
+client = MongoClient('REDACTED')
 db = client['farm_app']
 feedback_collection = db['feedback']
 
 # NASA API example URLs (replace with your API keys)
-SMAP_API_URL = "https://api.nasa.gov/SMAP?api_key=8yVUkiHz8AVpaqW8b4gKdGJBrD5tigkkluIM1Won"
-MODIS_API_URL = "https://api.nasa.gov/MODIS?api_key=8yVUkiHz8AVpaqW8b4gKdGJBrD5tigkkluIM1Won"
-GLAM_API_URL = "https://api.nasa.gov/GLAM?api_key=8yVUkiHz8AVpaqW8b4gKdGJBrD5tigkkluIM1Won"
+SMAP_API_URL = "REDACTED"
+MODIS_API_URL = "REDACTED"
+GLAM_API_URL = "REDACTED"
 
 
 # Landing Page with 3D rotating globe
